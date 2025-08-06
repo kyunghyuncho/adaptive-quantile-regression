@@ -1,0 +1,38 @@
+# -------------------------
+# General Settings
+# -------------------------
+seed: 42
+
+# -------------------------
+# Data Generation Settings
+# -------------------------
+data:
+  degree: 4          # Degree of the true polynomial function
+  noise_scale: 0.8   # Controls the magnitude of the heteroscedastic noise
+  n_samples: 5000    # Total number of data points to generate
+  x_range: [-4, 4]   # The range [min, max] for the input variable x
+
+# -------------------------
+# Model Architecture
+# -------------------------
+model:
+  hidden_size: 128      # Number of neurons in each hidden layer
+  num_hidden_layers: 3  # Number of hidden layers in the MLP
+
+# -------------------------
+# Training Hyperparameters
+# -------------------------
+training:
+  learning_rate: 0.001
+  batch_size: 128
+  max_epochs: 100
+  num_workers: 4       # Number of CPU workers for data loading
+  log_every_n_steps: 10 # How often to log to WandB
+  checkpoint_dir: 'checkpoints/' # Directory to save the best model
+  early_stopping_patience: 15 # Stop training if val_loss doesn't improve for this many epochs
+
+# -------------------------
+# Experiment Tracking
+# -------------------------
+wandb:
+  project: 'adaptive-quantile-regression'
