@@ -7,25 +7,25 @@ seed: 42
 # Data Generation Settings
 # -------------------------
 data:
-  degree: 4          # Degree of the true polynomial function
-  noise_scale: 0.8   # Controls the magnitude of the heteroscedastic noise
-  n_samples: 5000    # Total number of data points to generate
-  x_range: [-4, 4]   # The range [min, max] for the input variable x
+  degree: 3          # Degree of the true polynomial function
+  noise_scale: 1.   # Controls the magnitude of the heteroscedastic noise
+  n_samples: 100    # Total number of data points to generate
+  x_range: [-2, 2]   # The range [min, max] for the input variable x
 
 # -------------------------
 # Model Architecture
 # -------------------------
 model:
   hidden_size: 128      # Number of neurons in each hidden layer
-  num_hidden_layers: 3  # Number of hidden layers in the MLP
+  num_hidden_blocks: 3  # Number of hidden layers in the MLP
 
 # -------------------------
 # Training Hyperparameters
 # -------------------------
 training:
   learning_rate: 0.001
-  batch_size: 128
-  max_epochs: 100
+  batch_size: 32
+  max_epochs: 10000
   num_workers: 4       # Number of CPU workers for data loading
   log_every_n_steps: 10 # How often to log to WandB
   checkpoint_dir: 'checkpoints/' # Directory to save the best model

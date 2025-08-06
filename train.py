@@ -43,7 +43,7 @@ def train(config):
         input_size=1, # Since our x is a single feature
         hidden_size=config['model']['hidden_size'],
         learning_rate=config['training']['learning_rate'],
-        num_hidden_layers=config['model']['num_hidden_layers']
+        num_hidden_blocks=config['model']['num_hidden_blocks']
     )
 
     # --- Callbacks ---
